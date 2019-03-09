@@ -49,9 +49,9 @@ def get_vocab(train_file, dev_file):
         vocab_set.add(word[0])
 
     #add predicate in all_50_schemas
-    if not os.path.exists('../data/all_50_schemas'):
-        raise ValueError("../data/all_50_schemas not found.")
-    with codecs.open('../data/all_50_schemas', 'r', 'utf-8') as fr:
+    if not os.path.exists('./data/all_50_schemas'):
+        raise ValueError("./data/all_50_schemas not found.")
+    with codecs.open('./data/all_50_schemas', 'r', 'utf-8') as fr:
         for line in fr:
             dic = json.loads(line.strip())
             p = dic['predicate']
@@ -64,5 +64,5 @@ if __name__ == '__main__':
     # train_file = sys.argv[1]
     # dev_file = sys.argv[2]
     # get_vocab(train_file, dev_file)
-    get_vocab('../data/train_data.json','../data/dev_data.json')
+    get_vocab('./data/train_data.json','./data/dev_data.json')
     # load_word_file('../data/dev_data.json')
